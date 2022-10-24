@@ -1,0 +1,16 @@
+.main_elem{
+    width: 250px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    outline: 2px solid #000; /* Чёрная рамка */
+    padding: 10px
+}
+
+.form_convert{
+    display: inline-block;
+}

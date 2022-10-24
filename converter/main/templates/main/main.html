@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+</head>
+<body>
+<div class="main_elem">
+    <div class="form_convert">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <label>Amount </label>
+        <input type="number" name="amount" value="100">
+        <br>
+        <br>
+        <label>Convert from</label>
+        <select name = 'convert_from'>
+            {% for curr in currency %}
+                <option value="{{ curr }}"> {{ curr }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <label>Convert to</label>
+        <select name = 'convert_to'>
+            {% for curr in currency %}
+                <option value="{{ curr }}"> {{ curr }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <input type="submit" value="Convert">
+    </form>
+        </div>
+    {% if convert_amount %}
+    <div class="convert_amount">
+        <p>{{ convert_amount }}</p>
+    </div>
+    {% endif%}
+</div>
+</body>
+</html>
